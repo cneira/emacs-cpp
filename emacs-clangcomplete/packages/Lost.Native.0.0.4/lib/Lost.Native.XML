@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Lost.Native</name>
+    </assembly>
+    <members>
+        <member name="T:Lost.Native.DynamicLibrary">
+            <summary>
+            This class represents native dynamic library.
+            </summary>
+        </member>
+        <member name="M:Lost.Native.DynamicLibrary.Load(System.Reflection.Assembly,System.String,System.String)">
+            <summary>
+            Loads dynamic library from the resource assembly, automatically selecting appropriate
+            file extension (.dll or .so) and CPU arhitecture (.IA32 or .AMD64).
+            <para>Library is loaded from resource stream named in the following format:
+            Namespace.ArchitectureName.LibraryNameDefaultExtension</para>
+            </summary>
+            
+            <param name="resourceAssembly">The assembly, which contains requested library
+            as an embedded resource.</param>
+            
+            <param name="libraryName">The name of library to load.</param>
+            
+            <param name="namespace">
+            Namespace in which resource lies.
+            Usually it is the default namespace of assembly + all intermediate directories.
+            </param>
+        </member>
+        <member name="P:Lost.Native.DynamicLibrary.ArchitectureName">
+            <summary>
+            Current CPU architecture name. AMD64 or IA32.
+            For 32 bit processes on 64 bit machine returns IA32.
+            </summary>
+        </member>
+        <member name="P:Lost.Native.DynamicLibrary.DefaultExtension">
+            <summary>
+            Default dynamic library extension for current machine.
+            .dll or .so
+            </summary>
+        </member>
+    </members>
+</doc>

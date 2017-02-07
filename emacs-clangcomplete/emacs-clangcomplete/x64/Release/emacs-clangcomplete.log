@@ -1,0 +1,10 @@
+﻿  Codecomplete.cpp
+Codecomplete.cpp(248): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+Codecomplete.cpp(275): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  emacs-clangcomplete.cpp
+     Creating library C:\Users\a03550a\Documents\Visual Studio 2015\Projects\emacs-clangcomplete\x64\Release\emacs-clangcomplete.lib and object C:\Users\a03550a\Documents\Visual Studio 2015\Projects\emacs-clangcomplete\x64\Release\emacs-clangcomplete.exp
+  Generating code
+  Finished generating code
+  All 190 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  emacs-clangcomplete.vcxproj -> C:\Users\a03550a\Documents\Visual Studio 2015\Projects\emacs-clangcomplete\x64\Release\emacs-clangcomplete.dll
+  emacs-clangcomplete.vcxproj -> C:\Users\a03550a\Documents\Visual Studio 2015\Projects\emacs-clangcomplete\x64\Release\emacs-clangcomplete.pdb (Full PDB)
