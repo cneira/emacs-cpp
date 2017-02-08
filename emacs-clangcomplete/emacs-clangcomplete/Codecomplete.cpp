@@ -228,15 +228,7 @@ extern "C" {
 
 		printf("filename is %s line %d col %d\n", filename,
 			line_number,column_number);
-		/*
-		unsigned parseTUOptions_;
-		parseTUOptions_ |= CXTranslationUnit_DetailedPreprocessingRecord;
-		parseTUOptions_ |= CXTranslationUnit_IncludeBriefCommentsInCodeCompletion;
-		parseTUOptions_ &= ~CXTranslationUnit_CacheCompletionResults;
-		parseTUOptions_ &= ~CXTranslationUnit_PrecompiledPreamble;
-		parseTUOptions_ |= CXTranslationUnit_KeepGoing;
-
-		*/
+		
 		
 
 		unsigned flags = static_cast<CXTranslationUnit_Flags>(clang_defaultEditingTranslationUnitOptions());
@@ -247,12 +239,36 @@ extern "C" {
 		flags |= CXTranslationUnit_PrecompiledPreamble;
 
 
+
+
+
+
 		// create Translation Unit
 		std::vector<const char *> argv;
-		argv.push_back("-isystem");
-		argv.push_back("C:\\Program Files\\LLVM\\include");
-
+		//argv.push_back("-isystem");
+		argv.push_back("-fms-compatibility-version=19");
+		argv.push_back("--std=c++11");
+	/*	argv.push_back("-std=C++14");
+		argv.push_back("-fms-compatbility-version=19");
+		argv.push_back("-IC:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\include");
+		argv.push_back("-IC:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.10240.0\\ucrt");
+		argv.push_back("-IC:\\Program Files(x86)\\Windows Kits\\10\\Include\\10.0.10240.0\\ucrt");
+		argv.push_back("-IC:\\Users\\a03550a\\Documents\\PRS\\boost_1_60_0\\boost ");
+		argv.push_back("-IC:\\Program Files\\LLVM\\include");
+		argv.push_back("-IC:\\Program Files(x86)\\Microsoft Visual Studio 14.0\\VC\\include ");
+		argv.push_back("-IC:\\Program Files(x86)\\Microsoft Visual Studio 14.0\\VC\\atlmfc\\include ");
 		
+		
+		argv.push_back("-IC:\\Program Files(x86)\\Windows Kits\\8.1\\Include\\um ");
+		argv.push_back("-IC:\\Program Files(x86)\\Windows Kits\\8.1\\Include\\shared ");
+		argv.push_back("-IC:\\Program Files(x86)\\Windows Kits\\8.1\\Include\\winrt ");
+		argv.push_back("-IC:\\Program Files\\LLVM\\include ");*/
+		argv.push_back("-IC:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.10150.0\\ucrt");
+		argv.push_back("-IC:\\MinGW\\include ");
+		argv.push_back("-IC:\\msys64\\usr\\include ");
+		argv.push_back("-IC:\\Users\\a03550a\\Documents\\PRS\\boost_1_60_0\\boost");
+		
+		//argv.push_back("-IC:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.10240.0\\ucrt");
 
 		CXTranslationUnit tu = clang_parseTranslationUnit(
 			index, filename, argv.data(), static_cast<int>(argv.size()), 
